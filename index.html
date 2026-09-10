@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>じっけんラボ</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #fef6e4 0%, #fdeecb 100%);
+    color: #33312e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  h1 { font-size: 2rem; margin-bottom: 4px; }
+  p.lead { color: #6b6558; margin-top: 0; }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+    gap: 16px;
+    margin-top: 24px;
+    width: 100%;
+    max-width: 700px;
+  }
+  .card {
+    display: block;
+    background: #fff;
+    border: 1px solid #e0d9c8;
+    border-radius: 16px;
+    padding: 20px;
+    text-decoration: none;
+    color: #33312e;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.1s ease;
+  }
+  .card:hover { transform: translateY(-2px); }
+  .card .emoji { font-size: 2.2rem; }
+  .card h2 { margin: 8px 0 4px; font-size: 1.1rem; }
+  .card p { margin: 0; font-size: 0.9rem; color: #6b6558; }
+</style>
+</head>
+<body>
+  <h1>🧪 じっけんラボ</h1>
+  <p class="lead">あそびながら まなべる ものを ここに おいていくよ</p>
+
+  <div class="cards">
+    <a class="card" href="turtle-game/index.html">
+      <div class="emoji">🐢</div>
+      <h2>かめプログラミング</h2>
+      <p>じぶんの プログラムで ステージを つくって、かめを うごかそう!</p>
+    </a>
+  </div>
+</body>
+</html>

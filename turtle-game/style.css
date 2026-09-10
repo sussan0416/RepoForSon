@@ -1,0 +1,201 @@
+:root {
+  color-scheme: light;
+  --bg: #fef6e4;
+  --panel: #ffffff;
+  --ink: #33312e;
+  --accent: #4c9a5b;
+  --accent-dark: #33723f;
+  --danger: #e0673f;
+  --border: #e0d9c8;
+  --grass1: #eaf7e5;
+  --grass2: #d9f0d0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #fef6e4 0%, #fdeecb 100%);
+  color: var(--ink);
+}
+
+.app-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.back-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.back-link:hover { text-decoration: underline; }
+
+.app-main {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(380px, 1fr);
+  gap: 20px;
+  padding: 20px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.left-col, .right-col {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.08s ease;
+}
+.btn:active { transform: scale(0.96); }
+
+.btn-run { background: var(--accent); }
+.btn-run:hover { background: var(--accent-dark); }
+.btn-stop { background: var(--danger); }
+.btn-stop:hover { background: #c1512f; }
+.btn-random { background: #cd8a3f; }
+.btn-random:hover { background: #ad7130; }
+.btn-reset { background: #5f8fc9; }
+.btn-reset:hover { background: #4a75ab; }
+.btn-docs { background: #8a6fbf; }
+.btn-docs:hover { background: #715aa3; }
+
+.docs-panel {
+  background: #fbf7ee;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+}
+.docs-panel h2 { margin-top: 0; font-size: 1.1rem; }
+.docs-panel h3 { margin-bottom: 4px; font-size: 1rem; }
+.docs-panel ul { margin: 4px 0 10px; padding-left: 20px; }
+.docs-panel code {
+  background: #eee3cf;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.95em;
+}
+.docs-tip { font-size: 0.92rem; margin: 6px 0; }
+
+.editor-block { margin-bottom: 12px; }
+.editor-block label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.editor-block textarea {
+  width: 100%;
+  min-height: 110px;
+  resize: vertical;
+  font-family: "SFMono-Regular", Consolas, "Courier New", monospace;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 10px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: #fffdf8;
+  color: var(--ink);
+}
+.editor-block textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.log-panel label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.log-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 10px;
+  height: 110px;
+  overflow-y: auto;
+  background: #fffdf8;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+.log-list li { padding: 2px 0; }
+
+.right-col h2 { margin-top: 0; }
+
+.grid {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  position: relative;
+}
+
+.cell-data.parity-even { background: var(--grass1); }
+.cell-data.parity-odd { background: var(--grass2); }
+
+.cell-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #7a7466;
+}
+
+#turtle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  z-index: 2;
+  transition: grid-row 0.15s linear, grid-column 0.15s linear;
+}
+
+.turtle-right { transform: rotate(0deg); }
+.turtle-down { transform: rotate(90deg); }
+.turtle-left { transform: rotate(180deg); }
+.turtle-up { transform: rotate(270deg); }
