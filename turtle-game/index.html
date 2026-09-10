@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>かめプログラミング</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>🐢 かめプログラミング</h1>
+    <a class="back-link" href="../index.html">← いちらんに もどる</a>
+  </header>
+
+  <main class="app-main">
+    <section class="left-col">
+      <div class="toolbar">
+        <button id="runBtn" class="btn btn-run">▶ じっこう</button>
+        <button id="stopBtn" class="btn btn-stop">⏹ ていし</button>
+        <button id="randomBtn" class="btn btn-random">🎲 ランダム</button>
+        <button id="resetBtn" class="btn btn-reset">🔄 リセット</button>
+        <button id="docsBtn" class="btn btn-docs">📖 つかいかた</button>
+      </div>
+
+      <div id="docsPanel" class="docs-panel" hidden>
+        <h2>📖 つかいかた</h2>
+        <h3>① ステージ プログラム（うえの わく）</h3>
+        <ul>
+          <li><code>apple(x, y)</code> — りんごを おく</li>
+          <li><code>orange(x, y)</code> — みかんを おく</li>
+          <li><code>melon(x, y)</code> — メロンを おく</li>
+          <li><code>kame(x, y)</code> — かめを おく（かならず 1かいだけ！）</li>
+        </ul>
+        <h3>② かめ プログラム（したの わく）</h3>
+        <ul>
+          <li><code>up(n)</code> — うえに n マス すすむ</li>
+          <li><code>down(n)</code> — したに n マス すすむ</li>
+          <li><code>left(n)</code> — ひだりに n マス すすむ</li>
+          <li><code>right(n)</code> — みぎに n マス すすむ</li>
+          <li><code>eat()</code> — いま いる ばしょの たべものを たべる</li>
+        </ul>
+        <p class="docs-tip">💡 たべものの うえを とおっても、<code>eat()</code> と かかないと たべないよ！</p>
+        <p class="docs-tip">💡 <code># これはメモだよ</code> のように <code>#</code> を つかうと メモが かけるよ。</p>
+        <p class="docs-tip">💡 マスの ばんごうは 1〜10 だよ。x は みぎ、y は した むきに すすむよ。</p>
+      </div>
+
+      <div class="editor-block">
+        <label for="stageInput">🗺 ステージ プログラム</label>
+        <textarea id="stageInput" spellcheck="false"></textarea>
+      </div>
+
+      <div class="editor-block">
+        <label for="turtleInput">🐢 かめ プログラム</label>
+        <textarea id="turtleInput" spellcheck="false"></textarea>
+      </div>
+
+      <div class="log-panel">
+        <label>📝 メッセージ</label>
+        <ul id="logList" class="log-list"></ul>
+      </div>
+    </section>
+
+    <section class="right-col">
+      <h2>ワールド</h2>
+      <div id="grid" class="grid"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
