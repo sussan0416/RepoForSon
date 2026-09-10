@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Claude Code (個人用ローカル設定)
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Logs / 一時ファイル
+*.log
+tmp/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Ruby
+/.bundle/
+vendor/bundle/
